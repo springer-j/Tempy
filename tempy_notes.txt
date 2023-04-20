@@ -1,0 +1,60 @@
+---------------------------------------------------------------------------------
+
+Program Notes
+Program:        Tempy (Raspi 4)
+Programmer:     Jake Springer
+Date:           4/18/23
+Purpose:        Smart Thermometer For Measuring Liquids
+
+---------------------------------------------------------------------------------
+
+                    ///  Overview  ///
+
+The first iteration of tempy is used with a Raspberry Pi 4 (RP4). However, 
+a future version is planned making use of the much smaller RP Pico W (RPP). 
+
+Tempy's main function is to monitor the temperature of liquid. It uses a 
+water-proof DS18B20 sensor to monitor these changes. Alongside it, Tempy uses a
+3-pin DHT11 temperature & humidity sensor to monitor the room temperature. But,
+the largest utility Tempy provides is it's ability to communicate data over a WLAN
+connection to a server. The software on the server (server_tempy.py) records the 
+temperature data to a file, and any system logs recieved from the Tempy client deviced.
+Working with the network connection, Tempy also has an LCD display to read out the
+current temps. The device also has 4 LED's, indicating where the current temperature 
+falls in predetermined "zones". This allows the Tempy device to be useable even if
+the connection to the server fails.
+
+---------------------------------------------------------------------------------
+
+                ///  COMPONENT LIST  ///
+
+- Raspberry Pi 4
+    - Internal MicroSD card
+    - Raspberry Pi OS
+- Water-proof DS18B20 temperature sensor (>1m in length)
+- DHT11 temperature and humidity sensor
+- LEDs (green x1, yellow x1, red x1, white x1)
+- 16x2 I2P LCD Display 
+- 220 ohm resistors (x4)
+
+---------------------------------------------------------------------------------
+
+                     ///  To Do  ///
+
+[0] CLIENT SOFTWARE / Issue transfering client information when trying to reconnect
+[0] HARDWARE / this fuckin DHT11 is buggy as hell. not sure if it's a wiring issue 
+    or the sensor itself. should be fixed tho.
+[0] SERVER SOFTWARE / write to files
+[0] CLIENT SOFTWARE / local error logs
+
+---------------------------------------------------------------------------------
+
+                     ///  Notes  ///
+
+
+---------------------------------------------------------------------------------
+
+                     ///  Bugs  ///
+
+
+---------------------------------------------------------------------------------
